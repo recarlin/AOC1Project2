@@ -64,17 +64,17 @@
     }
     [self.view addSubview: (pub)];
     
-    sumLab = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 110.0f, 90.0f, 20.0f)];
+    sumLab = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 100.0f, 160.0f, 20.0f)];
     if (sumLab != nil){
-        sumLab.text = @"Summary:";
-        sumLab.textAlignment = UITextAlignmentRight;
+        sumLab.text = @"Summary";
+        sumLab.textAlignment = UITextAlignmentLeft;
         sumLab.backgroundColor = [UIColor yellowColor];
     }
     [self.view addSubview:(sumLab)];
     
-    sum = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 140.0f, 320.0f, 200.0f)];
+    sum = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 130.0f, 320.0f, 200.0f)];
     if (sum != nil){
-        sum.text = @"We all know the story of The Beauty and The Beast, but what about how The Beast came be? Beast tells the tale of a young Persian prince named Orasmyn who got on the bad side of a fairy, whom casted a curse on him. He was forced to leave his kingdom and live alone in a castle in France. This is where The Beauty comes in, and we all know what happens from there.";
+        sum.text = @"\"Beast\" tells the tale of a young Persian prince, named Orasmyn, who gets on the bad side of a fairy. This fairy casts a terrible curse on him, giving him the form of a prideful lion. He is forced to leave his kingdom in search for redemption and eventually live alone in a French Castle. This is where The Beauty comes in, but that is a whole other story.";
         sum.textAlignment = UITextAlignmentCenter;
         sum.backgroundColor = [UIColor yellowColor];
         sum.numberOfLines = 9;
@@ -83,8 +83,28 @@
     
     NSArray *items = [[NSArray alloc] initWithObjects: @"Crown", @"Rose", @"Camel", @"Claw", @"River", nil];
     
-    NSLog(@"%@", [items description]);
-}
+    NSMutableString *list = [[NSMutableString alloc] initWithCapacity: 5];
+    
+    for (int i = 0; i < [items count]; i++){
+        [list appendString: [items objectAtIndex:i]];
+        [list appendString: @", "];
+    }
+    itemsLab = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 340.0f, 160.0f, 20.0f)];
+    if (itemsLab != nil){
+        itemsLab.text = @"List of items";
+        itemsLab.textAlignment = UITextAlignmentLeft;
+        itemsLab.backgroundColor = [UIColor yellowColor];
+    };
+    [self.view addSubview:(itemsLab)];
+    
+    itemsList = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 370.0f, 320.0f, 20.0f)];
+    if (itemsList != nil){
+        itemsList.text = list;
+        itemsList.textAlignment = UITextAlignmentCenter;
+        itemsList.backgroundColor = [UIColor yellowColor];
+    }
+    [self.view addSubview:(itemsList)];
+};
 
 - (void)viewDidUnload
 {

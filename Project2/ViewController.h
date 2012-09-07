@@ -17,5 +17,7 @@
     UILabel *pub;
     UILabel *sumLab;
     UILabel *sum;
+    UILabel *itemsLab;
+    UILabel *itemsList;
 }
 @end
