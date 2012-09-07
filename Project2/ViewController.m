@@ -74,13 +74,16 @@
     
     sum = [[UILabel alloc] initWithFrame: CGRectMake(0.0f, 140.0f, 320.0f, 200.0f)];
     if (sum != nil){
-        sum.text = @"We all know the story of The Beauty and The Beast, but what about how The Beast came be? Beast tells the tale of a young Persian prince who got on the bad side of a fairy, whom casted a curse upon him. He was forced to leave his kingdom and live alone in a castle in France. This is where The Beauty comes in, and we all know what happens from there.";
+        sum.text = @"We all know the story of The Beauty and The Beast, but what about how The Beast came be? Beast tells the tale of a young Persian prince named Orasmyn who got on the bad side of a fairy, whom casted a curse on him. He was forced to leave his kingdom and live alone in a castle in France. This is where The Beauty comes in, and we all know what happens from there.";
         sum.textAlignment = UITextAlignmentCenter;
         sum.backgroundColor = [UIColor yellowColor];
         sum.numberOfLines = 9;
     }
     [self.view addSubview:(sum)];
     
+    NSArray *items = [[NSArray alloc] initWithObjects: @"Crown", @"Rose", @"Camel", @"Claw", @"River", nil];
+    
+    NSLog(@"%@", [items description]);
 }
 
 - (void)viewDidUnload
